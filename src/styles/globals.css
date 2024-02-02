@@ -1,0 +1,155 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "@rainbow-me/rainbowkit/styles.css";
+@import "../styles/login.css";
+@import "../styles/animations.css";
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
+    rgb(var(--background-start-rgb));
+  font-size: 14px;
+}
+
+.swiper-slide {
+  text-align: center;
+
+  /* Center slide text vertically */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-pagination-bullet {
+  background-color: rgb(255 255 255 / 0.7) !important;
+}
+.swiper-pagination-bullet-active {
+  background-color: #fff !important;
+}
+
+button:disabled {
+  opacity: 50%;
+  cursor: not-allowed;
+}
+input:disabled {
+  opacity: 50%;
+  cursor: not-allowed;
+}
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    overflow-y: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+@layer components {
+  .container {
+    height: calc(100vh - 150px);
+    height: calc(100dvh - 150px);
+    min-height: -webkit-fill-available;
+    max-width: 100%;
+    overflow-y: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .container::-webkit-scrollbar {
+    display: none;
+  }
+  .h-fill {
+    height: -webkit-fill-available;
+  }
+  .min-h-fill {
+    min-height: -webkit-fill-available;
+  }
+  .btn {
+    @apply flex h-[35px] w-full items-center justify-center whitespace-nowrap py-1.5 text-12/16 font-bold text-white;
+  }
+  .btnGray {
+    @apply bg-[#ffffff26];
+  }
+  .btnYellow {
+    @apply bg-[#FEE44026] text-[#FEE440];
+  }
+  .btnCyan {
+    @apply bg-[#003d35] text-[#00F5D4];
+  }
+  .btnPink {
+    @apply bg-[#F15BB540] text-[#F15BB5];
+  }
+  .btnBorder {
+    @apply border border-white;
+  }
+  .btnSpace {
+    @apply mt-[5px];
+  }
+  .textBlur {
+    @apply text-white/50;
+  }
+  .inputText {
+    @apply border-none py-1.5 text-center outline-none;
+  }
+  .normalText {
+    font-size: 12px;
+    line-height: 22px;
+    font-style: normal;
+    font-weight: 400;
+  }
+  .labelText {
+    text-transform: uppercase;
+    font-size: 10px;
+    line-height: 22px;
+    font-style: normal;
+    font-weight: 500;
+  }
+  .titleText {
+    font-size: 14px;
+    line-height: 22px;
+    font-style: normal;
+    font-weight: 700;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    height: 100vh;
+    min-height: -webkit-fill-available !important;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:focus {
+  font-size: 14px;
+  -webkit-text-size-adjust: 100%;
+}
+
+input.small:focus {
+  font-size: 12px;
+  -webkit-text-size-adjust: 100%;
+}

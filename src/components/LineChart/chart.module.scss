@@ -1,0 +1,21 @@
+.customChart {
+  position: relative;
+  & table {
+    height: fit-content !important;
+    & tr {
+      &:nth-child(1) {
+        & td:nth-child(2) {
+          & canvas {
+            width: 100% !important;
+          }
+        }
+        & td:not(:nth-child(2)) {
+          display: none;
+        }
+      }
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+}
